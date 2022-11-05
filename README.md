@@ -1,7 +1,9 @@
-# Password Generator Starter Code
+# Password Generator with Starter Code
 ## Description
 
 Bootcamp: Module 3 Challenge <br />
+Password Generator
+Codebase correction that follows accessibility standards so that the site is optimized for search engines
 
 ## Table of Contents (Optional)
 
@@ -9,15 +11,17 @@ N/A
 
 ## Installation
 
-placeholder
+Github pages hosting: (placehodler)
 
 ## Usage
 
-Placeholder
+![alt text](../Module3Challenge/assets/css/password-generator.JPG)
 
 ## Credits
 
-Placeholder
+Starter code from: https://github.com/coding-boot-camp/friendly-parakeet <br />
+Starter code belonging to Xandromus <br />
+Date: March 15, 2020
 
 ## License
 
