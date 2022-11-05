@@ -38,7 +38,7 @@ const generatePassword = (length, characters) => {
   }
 
   // if (lCase.checked) {
-  //   return password;
+  //   return password.toLowerCase();
   // } else {
   //   return password;
   // }
