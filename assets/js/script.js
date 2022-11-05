@@ -8,6 +8,7 @@ const passTxt = document.getElementById("password");
 const length = document.getElementById("length");
 const Numbers = document.getElementById("numbers");
 const Symbols = document.getElementById("symbols");
+const lCase = document.getElementById("lowercase");
 
 //generate password
 const generateBtn = document.getElementById("generate");
@@ -15,7 +16,16 @@ generateBtn.addEventListener("click", () => {
   let characters = char;
   Numbers.checked ? (characters += num) : "";
   Symbols.checked ? (characters += sym) : "";
+  // lCase.checked ? (characters = characters.toLowerCase) : "";
+
+  //keep active
   passTxt.value = generatePassword(length.value, characters);
+
+  // if (lCase.checked) {
+  // passTxt.value = generatePassword(length.value, characters.toLowerCase());
+  // }
+  // Else {
+  // passTxt.value = generatePassword(length.value, characters);}
 });
 
 //password function
@@ -26,6 +36,13 @@ const generatePassword = (length, characters) => {
       Math.floor(Math.random() * characters.length)
     );
   }
+
+  // if (lCase.checked) {
+  //   return password;
+  // } else {
+  //   return password;
+  // }
+  //keep active
   return password;
 };
 
