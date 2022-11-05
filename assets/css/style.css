@@ -23,7 +23,7 @@ body {
   padding-right: 20px;
 }
 
-header {
+header, h1, h2, h3, h4 {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
@@ -38,7 +38,7 @@ header {
   color: hsl(206, 17%, 28%);
   font-size: 18px;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 1000px;
   padding: 30px 40px;
 }
 

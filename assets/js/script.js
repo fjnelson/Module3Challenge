@@ -1,21 +1,21 @@
 //source: https://github.com/w3collective/random-password-js
 //setting variables
-const alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const numbers = "0123456789";
-const symbols = "!@#$%^&*_-+=";
+const char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const num = "0123456789";
+const sym = "!@#$%^&*_-+=";
 
-const passwordTxt = document.getElementById("password");
+const passTxt = document.getElementById("password");
 const length = document.getElementById("length");
-const incNumbers = document.getElementById("numbers");
-const incSymbols = document.getElementById("symbols");
-const generateBtn = document.getElementById("generate");
+const Numbers = document.getElementById("numbers");
+const Symbols = document.getElementById("symbols");
 
 //generate password
+const generateBtn = document.getElementById("generate");
 generateBtn.addEventListener("click", () => {
-  let characters = alpha;
-  incNumbers.checked ? (characters += numbers) : "";
-  incSymbols.checked ? (characters += symbols) : "";
-  passwordTxt.value = generatePassword(length.value, characters);
+  let characters = char;
+  Numbers.checked ? (characters += num) : "";
+  Symbols.checked ? (characters += sym) : "";
+  passTxt.value = generatePassword(length.value, characters);
 });
 
 //password function
@@ -32,9 +32,9 @@ const generatePassword = (length, characters) => {
 //copy button + alert
 const copyBtn = document.getElementById("copy");
 copyBtn.addEventListener("click", () => {
-  passwordTxt.select();
+  passTxt.select();
   document.execCommand("copy");
-  alert("Password Copied");
+  alert("Password Has Been Copied");
 });
 
 //reset button
