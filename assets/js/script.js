@@ -36,3 +36,9 @@ copyBtn.addEventListener("click", () => {
   document.execCommand("copy");
   alert("Password Copied");
 });
+
+//reset button
+const resetBtn = document.getElementById("reset");
+resetBtn.addEventListener("click", () => {
+  window.location.reload();
+});
