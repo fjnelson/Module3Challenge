@@ -15,7 +15,7 @@ Github pages hosting: (placehodler)
 
 ## Usage
 
-![alt text](../Module3Challenge/assets/images/password-generator.JPG)
+![alt text](./assets/images/password-generator.JPG)
 
 ## Credits
 
