@@ -11,7 +11,7 @@ const PASSTXT = document.getElementById("password");
 const LENGTH = document.getElementById("length");
 const NUMBERS = document.getElementById("numbers");
 const SYMBOLS = document.getElementById("symbols");
-const LCASE = document.getElementById("lowercase");
+const LCASE = document.getElementById("lcletters");
 
 //generate password button
 const generateBtn = document.getElementById("generate");
@@ -19,33 +19,24 @@ generateBtn.addEventListener("click", () => {
   let characters = CHAR;
   NUMBERS.checked ? (characters += NUM) : "";
   SYMBOLS.checked ? (characters += SYM) : "";
-  // LCASE.checked ? (characters += characters()) : "";
+  // LCASE.checked ? (characters.toLowerCase()) : characters;
+  if (LCASE.checked) {
+    characters.toLowerCase();
+  }
 
   //keep active
   PASSTXT.value = GENERATEPASSWORD(LENGTH.value, characters);
-
-  // if (LCASE.checked) {
-  // PASSTXT.value = GENERATEPASSWORD(length.value, characters.toLowerCase());
-  // }
-  // Else {
-  // PASSTXT.value = GENERATEPASSWORD(length.value, characters);}
 });
 
 //password function
 const GENERATEPASSWORD = (LENGTH, characters) => {
+  // console.log(characters);
   let password = "";
   for (let i = 0; i < LENGTH; i++) {
     password += characters.charAt(
       Math.floor(Math.random() * characters.length)
     );
   }
-
-  // if (LCASE.checked) {
-  //   return toLowerCase(password);
-  // } else {
-  //   return password;
-  // }
-  //keep active
   return password;
 };
 
@@ -68,10 +59,10 @@ const GENERATEPROMPTBTN = document.getElementById("generatePrompt");
 GENERATEPROMPTBTN.addEventListener("click", () => 
 {
     var ent;
-    var choiceInput;
     var cnum;
     var csym;
     var cUpper;
+    var character="";
 
     //start prompts
     ent = parseInt(prompt("Password must be between 8 and 128 characters"));
@@ -86,43 +77,45 @@ GENERATEPROMPTBTN.addEventListener("click", () =>
   };
 
   if (!csym && !cnum && !cUpper) {
-    choiceInput = alert("choose something");
+    character += character.toLowerCase();
 
   }
-  else if (csym && cnum && cUpper) {
+  if (csym){
+    character += SYM;
+  }
 
-    choiceInput.toUpperCase() = character.concat(NUM, SYM);
+  if (cnum){
+    character += NUM;
   }
-  else if (csym && cnum) {
-    choiceInput = character.concat(NUM, SYM);
+ 
+  if (cUpper){
+    character += character.toUpperCase();
   }
-  else if (csym && cUpper) {
-    choiceInput.toUpperCase() = character.concat(SYM);
+
+  if (csym && cnum){
+    character += SYM + NUM;
   }
-  else if (cnum && cUpper) {
-    choiceInput.toUpperCase() = NUM.concat(NUM);
+
+  if (csym && cUpper){
+    character += character.toUpperCase() + SYM;
   }
- else if (csym) {
-    choiceInput = character.concat(SYM);
-  }  
-  else if (cnum) {
-    choiceInput = NUM;
+
+  if (cnum && cUpper){
+    character += character.toUpperCase() + NUM;
   }
-  // Created space variable to fill uppercase conversion
-  else if (cUpper) {
-    choiceInput.toUpperCase() = space.concat();
+
+  if (csym && cnum && cUpper){
+    character += character.toUpperCase() + SYM + NUM;
+  }
+
+ const GENERATEPROMPTPASSWORD = (ent, character) => {
+    let password = "";
+    for (let i = 0; i < ent; i++) {
+      password += character.charAt(
+        Math.floor(Math.random() * character.length)
+      );
+    }
+    return password;
   };
-
-  alert(choiceInput);
-  GENERATEPASSWORD();
-
-  var ps = password.join("");
-  GENERATEPASSWORD(ps);
-  return ps;
-
-  function UserInput(ps) {
-    document.getElementById("password").textContent = ps;
-
-  }
-
+  PASSTXT.value = GENERATEPROMPTPASSWORD(ent.value, character);
   });
