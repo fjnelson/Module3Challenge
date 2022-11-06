@@ -41,7 +41,7 @@ const GENERATEPASSWORD = (LENGTH, characters) => {
   }
 
   // if (LCASE.checked) {
-  //   return password.toLowerCase();
+  //   return toLowerCase(password);
   // } else {
   //   return password;
   // }
